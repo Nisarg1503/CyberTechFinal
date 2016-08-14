@@ -1,4 +1,5 @@
-﻿@model cybertech.Models.Product
+﻿@using cybertech.Models
+@model Product
 
 @{
     ViewBag.Title = "Description";
@@ -11,5 +12,21 @@
     <p>
         <em>CompAssec:</em>
         @Model.CompAssec.AssecName
+    </p>
+	<p>
+        <em>Product Name:</em>
+        @Model.ProductName
+	</p>
+	<p>
+        <em>Product Description:</em>
+        @Model.ProductDesc
+	</p>
+	<p>
+        <em>Product Description:</em>
+        @Model.Price
+	</p>
+	<br />
+	<p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart","ShoppingCart", new { id = Model.ProductID }, "")
     </p>
 </div>

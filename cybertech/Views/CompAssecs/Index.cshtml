@@ -6,21 +6,24 @@
 }
 
 <h2>Copmuter Accessories</h2>
-<div class="container-fluid">
+<div class="container">
+
     <div class="row">
-        <div class="col-xs-3 col-md-2">
-            <table class="table">
+       <div class="col-md-4">
+            <table class="table table-condensed">
                 <tr>
                     <td>
 
                         @foreach (var item in Model)
                         {
-                            @Html.ActionLink(item.AssecName, "Browse", new { id = item.AssecID })
-
+                           <li>
+						   @Html.ActionLink(item.AssecName, "Browse", new { id = item.AssecID })
+                           </li>
                         }
                     </td>
                 </tr>
             </table>
         </div>
         </div>
+     </div>
 </div>
