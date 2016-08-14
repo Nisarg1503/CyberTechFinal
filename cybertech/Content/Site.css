@@ -132,13 +132,18 @@ p.button a{
 
 }
 
-h5 {
+p {
     padding-bottom:0px;
-    font-size: 20px;
+    font-size: 18px;
     color: darkblue;
     font-family: Chewy;
+    font-weight: 600;
 }
-img#myimg {
-   padding-bottom:40px;
- 
+
+p em {
+     padding-bottom:0px;
+    font-size: 19px;
+    color: crimson;
+    font-family: Chewy;
+    font-weight: 600;
 }
