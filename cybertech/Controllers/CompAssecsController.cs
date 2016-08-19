@@ -9,11 +9,13 @@ using System.Web;
 using System.Web.Mvc;
 using cybertech.Models;
 
+
+
 namespace cybertech.Controllers
 {
     public class CompAssecsController : Controller
     {
-        private CyberTechModel db = new CyberTechModel();
+        CyberTechModel db = new CyberTechModel();
 
         // GET: CompAssecs
         public async Task<ActionResult> Index()
