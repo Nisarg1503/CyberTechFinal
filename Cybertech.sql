@@ -338,6 +338,10 @@ VALUES (104, 'Exian Tempered Glass iPad Mini Front Screen Protector', 'The scree
 
 select * from CompAssec
 select * from Product
+drop table Cart
+drop table OrderDetail
+drop table Cart
+
 
 SET ANSI_NULLS ON
 GO
@@ -348,7 +352,7 @@ GO
 CREATE TABLE [dbo].[Cart](
 	[RecordId] [int] IDENTITY(1,1) NOT NULL,
 	[CartId] [varchar](50) NOT NULL,
-	[AlbumId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
 	[Count] [int] NOT NULL,
 	[DateCreated] [datetime] NOT NULL,
  CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED 
@@ -384,7 +388,7 @@ CREATE TABLE [dbo].[Order](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [IPK_Invoice] ON [dbo].[Order] 
+CREATE NONCLUSTERED INDEX [IPK_Order] ON [dbo].[Order] 
 (
 	[OrderId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -397,7 +401,7 @@ GO
 CREATE TABLE [dbo].[OrderDetail](
 	[OrderDetailId] [int] IDENTITY(1,1) NOT NULL,
 	[OrderId] [int] NOT NULL,
-	[AlbumId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
 	[Quantity] [int] NOT NULL,
 	[UnitPrice] [numeric](10, 2) NOT NULL,
  CONSTRAINT [PKInvoiceL_0D760AD91DE57479] PRIMARY KEY CLUSTERED 
@@ -406,12 +410,12 @@ CREATE TABLE [dbo].[OrderDetail](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [IFK_Invoice_InvoiceLine] ON [dbo].[OrderDetail] 
+CREATE NONCLUSTERED INDEX [IFK_Order] ON [dbo].[OrderDetail] 
 (
 	[OrderId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [IPK_InvoiceLine] ON [dbo].[OrderDetail] 
+CREATE NONCLUSTERED INDEX [IPK_OrderDetail] ON [dbo].[OrderDetail] 
 (
 	[OrderDetailId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
