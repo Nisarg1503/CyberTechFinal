@@ -276,10 +276,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\CompAssecs\Create.cshtml" />
-    <Content Include="Views\CompAssecs\Delete.cshtml" />
-    <Content Include="Views\CompAssecs\Details.cshtml" />
-    <Content Include="Views\CompAssecs\Edit.cshtml" />
     <Content Include="Views\CompAssecs\Index.cshtml" />
     <Content Include="Views\CompAssecs\Browse.cshtml" />
     <Content Include="Views\CompAssecs\Description.cshtml" />
