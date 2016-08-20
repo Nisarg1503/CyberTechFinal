@@ -202,6 +202,7 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\all.jpg" />
     <Content Include="Assets\Images\Bg.jpg" />
     <Content Include="Assets\Images\home.png" />
     <Content Include="Assets\Images\logo.png" />
