@@ -1,0 +1,83 @@
+﻿@model cybertech.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+<style>
+    p {
+    color: indigo;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+</style>
+
+<h3>
+    <em>Review</em> your cart:
+</h3>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-condensed">
+                <tr>
+                    <td>
+
+                        <p class="button">
+                            @Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")
+                        </p>
+                        <div id="update-message">
+                        </div>
+                        <table>
+                            <tr>
+                                <th>
+                                    Album Name
+                                </th>
+                                <th>
+                                    Price (each)
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th></th>
+                            </tr>
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <tr id="row-@item.RecordId">
+                                    <td>
+                                        @Html.ActionLink(item.Product.ProductName, "Details",
+               "Store", new { id = item.ProductId }, null)
+                                    </td>
+                                    <td>
+                                        @item.Product.Price
+                                    </td>
+                                    <td id="item-count-@item.RecordId">
+                                        @item.Count
+                                    </td>
+                                    <td>
+                                        <a href="#" class="RemoveLink"
+                                           data-id="@item.RecordId">
+                                            Remove
+                                            from cart
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td>
+                                    Total
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td id="cart-total">
+                                    @Model.CartTotal
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

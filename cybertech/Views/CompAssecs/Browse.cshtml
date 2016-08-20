@@ -4,35 +4,16 @@
     ViewBag.Title = "Browse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    tr td li a{
-    color: indigo;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 400;
-    font-size: 25px;
-}
-    tr td li a:hover, a::after, a::before{
-    text-decoration: none;
-    color:crimson;
-}
-div.row div.col-xs-12.col-md-8 ul li a{
- color: indigo;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-}
-div.row div.col-xs-12.col-md-8 ul li a:hover, a::after, a::before {
-    text-decoration: none;
-    color:crimson;
-}
-</style>
 <h2>Browse</h2>
-
-<ul>
-    @foreach (var product in Model.Products)
-    {
-        <li>
-            @Html.ActionLink(product.ProductName, "Description", new { id = product.ProductID })
-        </li>
-    }
-</ul>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <ul>
+            @foreach (var product in Model.Products)
+            {
+                <li>
+                    @Html.ActionLink(product.ProductName, "Description", new { id = product.ProductID })
+                </li>
+            }
+        </ul>
+    </div>
+</div>

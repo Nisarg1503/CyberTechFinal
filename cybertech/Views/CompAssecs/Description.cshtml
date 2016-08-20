@@ -9,9 +9,27 @@
 
 <div id="album-details">
     <p>
-        <em>CompAssec:</em>
+        <em>Computer Accessory:</em>
         @Model.CompAssec.AssecName
     </p>
+    <p>
+        <em>Product Name:</em>
+        @Model.ProductName
+    </p>
+    <p>
+        <em>Product Description:</em>
+        @Model.ProductDesc
+    </p>
+    <p>
+        <em>Product Price:</em>
+        $@Model.Price
+    </p>
+    <p>
+        <img alt="@Model.ProductName"
+             src="~/Assets/Images/all.jpg" width="100" height="100" />
+    </p>
+
+    <br />
     <p class="button">
         @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.ProductID }, "")
     </p>

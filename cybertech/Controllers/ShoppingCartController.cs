@@ -10,7 +10,7 @@ namespace cybertech.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        CyberTechModel db = new CyberTechModel();
+        CyberTechModel storeDB = new CyberTechModel();
 
         //
         // GET: /ShoppingCart/
@@ -32,7 +32,7 @@ namespace cybertech.Controllers
         public ActionResult AddToCart(int id)
         {
             // Retrieve the album from the database
-            var addedAlbum = db.Products
+            var addedAlbum = storeDB.Products
                 .Single(product => product.ProductID == id);
 
             // Add it to the shopping cart
@@ -52,7 +52,7 @@ namespace cybertech.Controllers
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             // Get the name of the album to display confirmation
-            string albumName = db.Carts
+            string albumName = storeDB.Carts
                 .Single(item => item.RecordId == id).Product.ProductName;
 
             // Remove from cart
@@ -80,5 +80,6 @@ namespace cybertech.Controllers
             ViewData["CartCount"] = cart.GetCount();
             return PartialView("CartSummary");
         }
+
     }
 }

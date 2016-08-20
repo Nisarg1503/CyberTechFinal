@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 0px;
     padding-bottom: 20px;
-    font-family: Zapf Chancery, cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: medium;
     
 }
@@ -94,4 +94,56 @@ ul.navbar-nav {
     */
 a#contact {
     color:#ff6a00;
+}
+
+li {
+    list-style-type: square;
+}
+tr td li a{
+    color: indigo;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+tr td li a:hover, a::after, a::before{
+    text-decoration: none;
+    color:crimson;
+}
+div.row div.col-xs-12.col-md-8 ul li a{
+ color: indigo;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+div.row div.col-xs-12.col-md-8 ul li a:hover, a::after, a::before {
+    text-decoration: none;
+    color:crimson;
+}
+
+h2{
+    font-family:'Copperplate Gothic';
+    font-weight:500;
+    color:mediumvioletred;
+}
+
+p.button a{
+    color:saddlebrown;
+    font-size: 20px;
+
+}
+
+p {
+    padding-bottom:0px;
+    font-size: 18px;
+    color: darkblue;
+    font-family: Chewy;
+    font-weight: 600;
+}
+
+p em {
+     padding-bottom:0px;
+    font-size: 19px;
+    color: crimson;
+    font-family: Chewy;
+    font-weight: 600;
 }
